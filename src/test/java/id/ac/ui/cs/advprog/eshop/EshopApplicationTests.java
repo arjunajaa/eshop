@@ -1,13 +1,11 @@
 package id.ac.ui.cs.advprog.eshop;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+// Test class added ONLY to cover main() invocation not covered by application tests.
 class EshopApplicationTests {
-
     @Test
-    void contextLoads() {
+     void main() {
+        EshopApplication.main(new String[] {});
     }
-
 }

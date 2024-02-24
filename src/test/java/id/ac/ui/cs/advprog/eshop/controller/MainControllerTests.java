@@ -21,6 +21,6 @@ class MainControllerTests {
     @Test
     void testMainPage() {
         String result = mainController.mainPage(model);
-        assertEquals("mainPage",result);
+        assertEquals("homePage",result);
     }
 }

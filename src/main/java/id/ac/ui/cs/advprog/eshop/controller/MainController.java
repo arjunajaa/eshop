@@ -10,6 +10,6 @@ import org.springframework.ui.Model;
 public class MainController {
     @GetMapping("/")
     public String mainPage(Model model){
-        return "mainPage";
+        return "homePage";
     }
 }

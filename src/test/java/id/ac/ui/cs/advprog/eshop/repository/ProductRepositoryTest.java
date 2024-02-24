@@ -12,7 +12,7 @@ import java.util.Iterator;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ProductRepositoryTest {
+class ProductRepositoryTest {
     @InjectMocks
     ProductRepository productRepository;
     @BeforeEach
@@ -71,8 +71,11 @@ public class ProductRepositoryTest {
         assertEquals(product.getProductName(),oldName);
         assertEquals(product.getProductQuantity(),oldQuantity);
 
-        product.setProductName("Kecap Cap Bombong");
-        product.setProductQuantity(120);
+        Product newProduct = new Product();
+        newProduct.setProductName("Kecap Cap Bombong");
+        newProduct.setProductQuantity(120);
+        productRepository.update(product.getProductId(),newProduct);
+
         Product productToCheck = productRepository.findById(product.getProductId());
         assertNotEquals(product.getProductName(),oldName);
         assertNotEquals(product.getProductQuantity(),oldQuantity);

@@ -65,7 +65,7 @@ class ProductControllerTests {
     void testEditProductPost(){
         Product product = new Product();
         productService.create(product);
-        String result = productController.editProductPost(product.getProductId(), product.getProductName(), product.getProductQuantity());
+        String result = productController.editProductPost(product, model);
         assertEquals("redirect:/product/list",result);
     }
 }

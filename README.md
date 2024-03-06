@@ -49,3 +49,40 @@ Kode yang Sulit Dimengerti dan Dipelihara: Ketidakpatuhan terhadap SOLID sering 
 Ketergantungan Tinggi antar Komponen: Tanpa prinsip-prinsip SOLID, sering kali terjadi ketergantungan yang tinggi antara kelas-kelas dalam sebuah sistem. Hal ini membuat perubahan pada satu bagian dapat mempengaruhi banyak bagian lainnya, meningkatkan risiko kesalahan dan mempersulit pengujian.
 
 Kerentanan terhadap Kesalahan dan Perubahan yang Merusak: Ketergantungan yang tinggi dan kurangnya pemisahan tanggung jawab membuat kode menjadi rentan terhadap kesalahan. Modifikasi atau penambahan fitur baru bisa jadi sulit dilakukan tanpa mempengaruhi bagian-bagian yang sudah berjalan dengan baik, meningkatkan risiko bug dan perubahan yang merusak.
+
+# Tutorial 4
+
+1. Percival (2017) mengusulkan tiga kriteria utama untuk mengevaluasi kualitas seperangkat tes perangkat lunak:
+
+- Correctness:
+
+Functional test sudah memadai untuk memastikan aplikasi berfungsi dengan baik dari perspektif pengguna.
+Edge cases sudah diimplementasikan dengan baik, meskipun masih bisa ditingkatkan seperti menangani null di OrderRepository.
+Integrated tests bisa memberikan kepastian lebih untuk memastikan semua komponen terintegrasi dengan tepat.
+
+- Clean & Maintainable Code:
+
+Tests yang berhasil memberikan kepastian kapan untuk melakukan refactoring kode.
+Tests membantu mengarahkan desain kode yang baik. Unit tests penting untuk umpan balik desain komponen individu.
+
+- Productive Workflow:
+
+Feedback cycle sudah cepat dengan JUnit untuk mendeteksi error.
+Integrasi tests bisa dipercepat dengan membatasi cakupannya pada interaksi dengan perubahan kode saja.
+Subset test suite bisa dijalankan saat diperlukan.
+Tidak terlalu banyak waktu terbuang menunggu tes karena bisa dikerjakan hal lain sambil menunggu.
+<br><br>
+
+2. Tes yang dibuat mengikuti prinsip F.I.R.S.T:
+
+Cepat (Fast) - Unit tes berjalan dengan cepat untuk umpan balik instan.
+
+Independen (Independent) - Setiap tes dapat dijalankan sendiri tanpa bergantung pada yang lain.
+
+Dapat Diulangi (Repeatable) - Setiap tes menghasilkan output yang konsisten.
+
+Validasi Otomatis (Self-Validating) - Setiap tes memiliki keluaran pasti lulus/gagal.
+
+Tepat Waktu (Timely) - Tes ditulis sesaat sebelum kode produksi yang meluluskannya.
+
+Menurut saya, saya sudah cukup memenuhi prinsip F.I.R.S.T. Namun, saya akan terus belajar untuk memperbaiki tes yang saya buat agar lebih memenuhi prinsip F.I.R.S.T.

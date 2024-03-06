@@ -42,9 +42,9 @@ class PaymentServiceImplTest {
         List<Product> products = new ArrayList<>();
 
         Product product = new Product();
-        product.setId("eb558e9f-1c39-460e-8860-71af6af63bd6");
-        product.setName("Sampo Cap Bambang");
-        product.setQuantity(2);
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(2);
         products.add(product);
 
         orders = new ArrayList<>();

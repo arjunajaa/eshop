@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,7 +27,22 @@ public class OrderTest {
         this.products.add(product1);
         this.products.add(product2);
     }
+    @Test
+    void testBuilder() {
+        Order order = Order.builder()
+                .id("1")
+                .products(Arrays.asList(new Product(), new Product()))
+                .orderTime(123456789L)
+                .author("author")
+                .status(OrderStatus.WAITING_PAYMENT.getValue())
+                .build();
 
+        assertEquals("1", order.getId());
+        assertEquals(2, order.getProducts().size());
+        assertEquals(123456789L, order.getOrderTime());
+        assertEquals("author", order.getAuthor());
+        assertEquals(OrderStatus.WAITING_PAYMENT.getValue(), order.getStatus());
+    }
     @Test
     void testCreateOrderEmptyProduct(){
         this.products.clear();

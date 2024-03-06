@@ -115,9 +115,7 @@ class PaymentServiceImplTest {
         Order order = orders.get(0);
         doReturn(order).when(orderRepository).findById(payment.getId());
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            paymentService.setStatus(payment, "MEOW");
-        });
+        assertThrows(IllegalArgumentException.class, () -> paymentService.setStatus(payment, "MEOW"));
 
         verify(orderRepository, times(0)).save(any(Order.class));
         verify(paymentRepository, times(0)).save(any(Payment.class));
@@ -161,9 +159,7 @@ class PaymentServiceImplTest {
     void testSetStatusOrderNotFound() {
         Payment payment = payments.get(0);
 
-        assertThrows(java.util.NoSuchElementException.class, () -> {
-            paymentService.setStatus(payment, PaymentStatus.SUCCESS.getValue());
-        });
+        assertThrows(java.util.NoSuchElementException.class, () -> paymentService.setStatus(payment, PaymentStatus.SUCCESS.getValue()));
 
         verify(orderRepository, times(0)).save(any(Order.class));
         verify(paymentRepository, times(0)).save(any(Payment.class));
